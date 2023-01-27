@@ -1,0 +1,497 @@
+@font-face {
+    font-family: 'MarkW05-Medium';
+    src: url('../fonts/MarkW05-Medium.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Beaufort';
+    src: url('../fonts/Beaufort.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Spiegel';
+    src: url('../fonts/spiegel.ttf');
+    font-display: swap;
+}
+
+@keyframes float {
+    0% {
+        box-shadow: 0 5px 15px 0 rgba(0,0,0,0.6);
+        transform: translatey(0px);
+    }
+    50% {
+        box-shadow: 0 25px 15px 0 rgba(0,0,0,0.2);
+        transform: translatey(-15px);
+    }
+    100% {
+        box-shadow: 0 5px 15px 0 rgba(0,0,0,0.6);
+        transform: translatey(0px);
+    }
+}
+
+@keyframes move-around {
+    0% {
+        box-shadow: 0 5px 15px 0 rgba(0,0,0,0.6);
+        transform: translatex(15px);
+    }
+    50% {
+        box-shadow: 0 25px 15px 0 rgba(0,0,0,0.2);
+        transform: translatey(-15px);
+    }
+    100% {
+        box-shadow: 0 5px 15px 0 rgba(0,0,0,0.6);
+        transform: translatex(15px);
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'MarkW05-Medium', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    min-height: 78px;
+    background-color: #111111;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000000;
+}
+
+.header-logo {
+    width: 100%;
+    height: 100%;
+    max-width: 6.29rem;
+    max-height: 2.5rem;
+    margin-left: 30px;
+}
+
+
+.nav-center {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: min-content;
+    margin-bottom: 4px;
+}
+
+.nav-link {
+    padding-top: 10px;
+    text-decoration: none;
+    color: white;
+    margin-right: 10%;
+    margin-left: 10%;
+    font-size: 14px;
+    text-align: center;
+}
+
+.nav-center .nav-link:after {
+    display: block;
+    content: '';
+    border-bottom: solid 2px white;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+    transform-origin: 100% 50%;
+}
+
+.nav-center .nav-link:hover:after {
+    transform: scaleX(1);
+    transform-origin: 0 50%;
+}
+
+.nav-contact-official {
+    display: flex;
+}
+
+.nav-link-official {
+    padding: 12px;
+    margin-right: 20px;
+    margin-left: 0;
+    border-radius: 7px;
+    background-color: #12D8F6;
+    color: #282828;
+}
+
+.nav-link-contact {
+    padding: 12px;
+    margin-right: 40px;
+    margin-left: 0;
+    border-radius: 7px;
+    background-color: #282828;
+    color: #f9f9f9;
+}
+
+.home-menu {
+    margin-top: 100px;
+    font-family: 'Beaufort', sans-serif;
+    font-size: 4.16vw;
+    color: white;
+    align-items: center;
+    text-align: center;
+    font-style: italic;
+    z-index: 1;
+    position: absolute;
+    top: 35%;
+    left: 15%;
+    width: 70%;
+}
+
+.home-game-description {
+    margin-top: 100px;
+    font-family: 'Spiegel', "Arial Narrow", Arial, sans-serif;
+    font-size: 1.1vw;
+    color: white;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+    position: absolute;
+    top: 47%;
+    left: 25%;
+    width: 50%;
+}
+
+.background-video {
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.rules {
+    background-color: #040608;
+    color: white;
+    display: flex;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.rules-title {
+    font-size: 4.16vw;
+    font-family: Beaufort, sans-serif;
+    font-style: italic;
+    padding-bottom: 50px;
+}
+
+.rules-text {
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.rules-text p {
+    padding-top: 15px;
+    width: 65%;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.league-positions {
+    padding-top: 100px;
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+
+.position-image {
+    padding-top: 50px;
+    width: 100%;
+    height: 100%;
+    max-width: 5rem;
+    max-height: 5rem;
+    transition: transform .5s;
+}
+
+.position-image:hover {
+    transform: scale(1.2);
+}
+
+.map-text p {
+    padding-top: 5px;
+    width: 50%;
+    text-align: center;
+}
+
+.map {
+    margin-top: 4px;
+    background-color: #040608;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    margin-bottom: 4px;
+}
+
+.map-title {
+    font-size: 4.16vw;
+    font-family: Beaufort, sans-serif;
+    font-style: italic;
+}
+
+.map-text {
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.map-image {
+    width: 100%;
+    height: 100%;
+    margin-right: -10%;
+    max-width: 60rem;
+    max-height: 60rem;
+    transform: translatey(0px);
+    animation: float 5s ease-in-out infinite;
+}
+
+.background-image {
+    background-image: url("../img/Background.webp");
+    height: 900px;
+    margin-bottom: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.champion {
+    display: flex;
+    width: 100%;
+    padding-bottom: 150px;
+    background-color: #040608;
+}
+
+.champion-redirection {
+    text-decoration: none;
+}
+
+h1.style {
+    animation-duration: 2000ms;
+    animation-delay: 500ms;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.champion-main-title {
+    font-size: 4.16vw;
+    font-family: Beaufort, sans-serif;
+    font-style: italic;
+    color: white;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.champion-description-video {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding-bottom: 10px;
+    margin-bottom: 4px;
+}
+
+.champion-description {
+    font-family: 'Spiegel', "Arial Narrow", Arial, sans-serif;
+    font-size: 1.1vw;
+    color: white;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 5rem;
+    font-style: italic;
+}
+
+.champion-presentation {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.champion-render {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 100px;
+}
+
+.champion-image {
+    width: 100%;
+    height: 100%;
+    max-height: 55rem;
+    max-width: 55rem;
+    transform: translatex(0px);
+    animation: move-around 5s ease-in-out infinite;
+}
+
+.champion-title {
+    font-size: 3vw;
+    font-family: Beaufort, sans-serif;
+    color: white;
+    padding: 20px;
+    background-color: #282828;
+    border-radius: 15px;
+    margin-bottom: 10rem;
+    transition: transform .75s;
+}
+
+.champion-title:hover {
+    transform: scale(1.1);
+}
+
+.champion-items {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.items {
+    width: 100%;
+    height: 100%;
+    max-width: 3rem;
+    max-height: 3rem;
+    padding: 3px;
+    border: 1px solid goldenrod;
+    background-color: #282828;
+    transition: transform .5s;
+}
+
+.items:hover {
+    transform: scale(1.2);
+}
+
+.items-description {
+    background-color: #040608;
+    color: white;
+    padding-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.items-description-text {
+    font-family: 'Spiegel', "Arial Narrow", Arial, sans-serif;
+    font-style: italic;
+    font-size: 0.9vw;
+    width: 50%;
+}
+
+#gameplay {
+    margin-top: 5px;
+    padding-top: 100px;
+    background-color: #040608;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 100px;
+    margin-bottom: 4px;
+}
+
+.gameplay-title {
+    font-size: 4.16vw;
+    font-family: Beaufort, sans-serif;
+    font-style: italic;
+    color: white;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 100px;
+}
+
+.embedded-video {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #040608;
+    padding-bottom: 100px;
+}
+
+.contact-title {
+    padding-top: 100px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 100px;
+    font-size: 4.16vw;
+    font-family: Beaufort, sans-serif;
+    font-style: italic;
+}
+
+.contact-form {
+    display: flex;
+    justify-content: center;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+
+input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    background-color: #1a1a1a;
+    color: white;
+    border-radius: 5px;
+    padding: 20px;
+    width: 50%;
+    text-align: center;
+}
+
+footer {
+    background-color: #111111;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    color: white;
+}
